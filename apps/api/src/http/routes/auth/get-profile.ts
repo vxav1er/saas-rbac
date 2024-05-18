@@ -18,9 +18,6 @@ export async function getProfile(app: FastifyInstance) {
           tags: ['auth'],
           summary: 'Get authenticated  user profile',
           response: {
-            404: z.object({
-              message: z.string(),
-            }),
             200: z.object({
               user: z.object({
                 id: z.string().uuid(),
