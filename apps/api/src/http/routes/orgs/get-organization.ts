@@ -4,8 +4,6 @@ import z from 'zod'
 
 import { auth } from '@/http/middlewares/auth'
 
-import { BadRequestError } from '../_errors/bad-request'
-
 export async function getOrganization(app: FastifyInstance) {
   app
     .withTypeProvider<ZodTypeProvider>()
@@ -41,9 +39,6 @@ export async function getOrganization(app: FastifyInstance) {
         const { slug } = request.params
         const { organization } = await request.getUserMembership(slug)
 
-        if (!organization) {
-          throw new BadRequestError('Organization not found.')
-        }
         reply.status(200).send({
           organization,
         })
