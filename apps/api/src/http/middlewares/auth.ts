@@ -3,7 +3,7 @@ import fastifyPlugin from 'fastify-plugin'
 
 import { prisma } from '@/lib/prisma'
 
-import { UnauthorizedError } from '../routes/_errors/unauthorized-erro'
+import { UnauthorizedError } from '../routes/_errors/unauthorized-error'
 
 export const auth = fastifyPlugin(async (app: FastifyInstance) => {
   app.addHook('preHandler', async (request) => {

@@ -8,7 +8,7 @@ import { prisma } from '@/lib/prisma'
 import { getUserPermissions } from '@/utils/get-user-permissions'
 
 import { BadRequestError } from '../_errors/bad-request'
-import { UnauthorizedError } from '../_errors/unauthorized-erro'
+import { UnauthorizedError } from '../_errors/unauthorized-error'
 
 export async function updateProject(app: FastifyInstance) {
   app
