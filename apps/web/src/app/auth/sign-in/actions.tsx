@@ -15,7 +15,7 @@ const signInSchema = z.object({
     .min(6, { message: 'Password must be at least 6 characters long' }),
 })
 
-export async function signInWithEmailAndPassword(_: unknown, data: FormData) {
+export async function signInWithEmailAndPassword(data: FormData) {
   const payload = signInSchema.safeParse(Object.fromEntries(data))
 
   if (!payload.success) {
